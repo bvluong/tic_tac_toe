@@ -29,6 +29,10 @@ class Board {
   }
 
   columns() {
+    return this.grid[0].map( (el,idx) =>
+      el.concat(this.grid[1][idx])
+        .concat(this.grid[2][idx])
+      );
   }
 
   diagonal() {
@@ -48,3 +52,4 @@ class Board {
 let newGame = new Board;
 newGame.placeMark([0,1],"X");
 newGame.display();
+console.log(newGame.columns());
