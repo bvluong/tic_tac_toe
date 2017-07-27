@@ -20,6 +20,18 @@ class Board {
   }
 
   winner() {
+    this.grid.forEach(row => {
+      if (row.every(el => el === "X") || row.every(el => el === "O")) {
+        return true;
+      }
+    });
+    return false;
+  }
+
+  columns() {
+  }
+
+  diagonal() {
 
   }
 
