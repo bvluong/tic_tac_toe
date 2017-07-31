@@ -29,11 +29,9 @@ class Board {
   }
 
   checkWinner() {
-    if (this.winner(this.grid)) {
-      return true;
-    } else if (this.winner(this.column())) {
-      return true;
-    } else if (this.winner(this.diagonal())) {
+    if (this.winner(this.grid) ||
+        this.winner(this.column()) ||
+        this.winner(this.diagonal()) ) {
       return true;
     } else {
       return false;
@@ -63,8 +61,11 @@ class Board {
 }
 
 let newGame = new Board;
+newGame.placeMark([0,0],"X");
 newGame.placeMark([0,1],"X");
+newGame.placeMark([0,2],"X");
 newGame.display();
 console.log(newGame.diagonal());
 console.log(newGame.column());
+console.log(newGame.grid);
 console.log(newGame.checkWinner());
